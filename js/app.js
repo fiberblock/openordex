@@ -1213,13 +1213,14 @@ async function loadLatestOrders(limit = 8, nostrLimit = 25) {
             orderElement.target = `_blank`
             orderElement.innerHTML = `
                 <div class="card card-tertiary w-100 fmxw-300">
-                    <div class="card-header text-center">
-                        <span>Inscription #${order.number}</span>
-                    </div>
+                    
                     <div class="card-body" style="padding: 6px 7px 7px 7px">
-                        <iframe style="pointer-events: none" sandbox=allow-scripts
+                        <iframe style="pointer-events: none; border: none" sandbox=allow-scripts
                             scrolling=no loading=lazy
                             src="${ordinalsExplorerUrl}/preview/${order.inscriptionId}"></iframe>
+                        <div class="card-inscription text-center">
+                            <span>Inscription #${order.number}</span>
+                        </div>
                         <button class="btn btn-block btn-primary mt-2" style="max-width:185px; max-height: revert">${sanitizeHTML(order.title)}</button>
                     </div>
                 </div>`
